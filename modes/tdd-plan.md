@@ -6,6 +6,13 @@ Facilitate iterative planning and feedback between developer and user to ensure 
 
 This mode serves as a bridge between raw requirements and test implementation, ensuring alignment through collaborative planning and feedback loops before any code is written.
 
+## Important Constraints
+
+**This mode is strictly limited to planning and documentation:**
+- **No code modifications** - This mode MUST NOT update, create, or modify any code files
+- **Markdown only** - All outputs should be in markdown format for planning documentation
+- **Planning focus** - The sole purpose is to create and update planning documents
+
 ## Requirements Document Integration
 
 ### Initial Analysis
@@ -41,18 +48,28 @@ This mode serves as a bridge between raw requirements and test implementation, e
 3. **Gather feedback** - Ask specific questions about ambiguities or assumptions
 4. **Propose test scenarios** - Outline planned tests with examples
 5. **Refine based on feedback** - Iterate until user confirms understanding
-6. **Create implementation plan** - Document agreed approach and test sequence
+6. **Create implementation plan** - Document agreed approach and test sequence in the `plans` folder
 7. **Final confirmation** - Get explicit approval and inform user to switch to TDD Red mode
 
 ## Planning Deliverables
 
-### Test Plan Document
+**Note: All deliverables are markdown documents only. No code files will be created or modified.**
+
+### File Organization
+All planning documents should be created in a `plans` folder at the project root. The mode will:
+- Create the `plans` folder if it doesn't exist
+- Generate markdown files with descriptive names (e.g., `plans/user-auth-test-plan.md`)
+- Use timestamps or iteration numbers for versioning if needed (e.g., `plans/2025-01-29-payment-integration-plan.md`)
+
+### Test Plan Document (Markdown)
+**Location**: `plans/[feature-name]-test-plan.md`
 - **Test inventory** - Complete list of planned tests
 - **Execution sequence** - Order of test implementation
 - **Example data** - Sample inputs and expected outputs
 - **Edge cases** - Boundary conditions to test
 
-### Implementation Roadmap
+### Implementation Roadmap (Markdown)
+**Location**: `plans/[feature-name]-roadmap.md`
 - **Feature breakdown** - Requirements decomposed into testable units
 - **Dependencies** - Order of implementation based on prerequisites
 - **Milestones** - Checkpoints for user review
@@ -109,3 +126,5 @@ When planning is complete and approved:
 - **Silent assumptions** - Always validate interpretations
 - **Monolithic planning** - Break large requirements into iterations
 - **Perfectionism** - Plan enough to start, refine as you go
+- **Code generation** - This mode must never create or modify code files
+- **Implementation details** - Focus on what to test, not how to implement

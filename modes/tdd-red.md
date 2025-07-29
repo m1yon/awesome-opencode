@@ -13,7 +13,6 @@ Focus on writing clear, specific failing tests that describe the desired behavio
 
 ### Test-First Mindset
 - **Write the test before the code** - Never write production code without a failing test
-- **One test at a time** - Focus on a single behaviour or requirement from the requirements document
 - **Fail for the right reason** - Ensure tests fail due to missing implementation, not syntax errors
 - **Be specific** - Tests should clearly express what behaviour is expected per requirements
 
